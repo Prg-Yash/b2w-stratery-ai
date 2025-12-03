@@ -51,7 +51,7 @@ Simply describe your project, and get:
 
 ### 🌍 **Global & Accessible**
 
-- **Multi-language Support**: 100+ languages via Google Translate
+- **Multi-language Support**: 10+ languages via Google Translate
 - **PDF Export**: Download complete strategies
 - **Responsive Design**: Works on desktop, tablet, and mobile
 - **Real-time Updates**: Instant strategy generation
@@ -399,3 +399,4 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 [⬆ Back to Top](#-b2w-video-strategy-copilot)
 
 </div>
+
