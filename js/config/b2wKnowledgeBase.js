@@ -30,7 +30,7 @@ export const B2W_KNOWLEDGE_BASE = {
       },
     },
     stats: {
-      videosProduced: "3000+",
+      videosProduced: "50+",
       secondsOfStorytelling: "300,000+",
       happyClients: "2000+",
       countriesServed: "20+",
@@ -841,7 +841,7 @@ export const B2W_KNOWLEDGE_BASE = {
     creative: [
       "100% custom illustration and animation",
       "Human-powered creativity (no AI shortcuts)",
-      "Storytelling frameworks proven across 3000+ videos",
+      "Storytelling frameworks proven across 50+ videos",
       "Emotional + logical narrative balance",
     ],
 

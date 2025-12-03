@@ -1,6 +1,6 @@
 # 🎬 B2W Video Strategy Copilot
 
-> **AI-Powered Video Strategy Tool** | Powered by 15 years of B2W expertise and 3,000+ successful videos
+> **AI-Powered Video Strategy Tool** | Powered by 15 years of B2W expertise and 50+ successful videos
 
 <div align="center">
 
@@ -296,7 +296,7 @@ Email security concerns to: security@example.com
 
 The AI is trained on B2W's 15-year expertise:
 
-- **3,000+ Videos**: Across all industries and styles
+- **50+ Videos**: Across all industries and styles
 - **8 Industries**: SaaS, Fintech, Healthcare, Cybersecurity, EdTech, Manufacturing, Utilities, Nonprofit
 - **6 Animation Styles**: 2D Character, Motion Graphics, 3D Product, Whiteboard, Isometric, Mixed Media
 - **Real Pricing**: Actual B2W package costs (Growth, Premium, Flick)
