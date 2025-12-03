@@ -13,8 +13,7 @@ dist-ssr
 *.local
 
 # API Keys and Environment
-.env
-js/config/apiConfig.js
+
 !js/config/apiConfig.template.js
 
 # Editor directories and files
