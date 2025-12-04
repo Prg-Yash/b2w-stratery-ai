@@ -23,7 +23,7 @@ Simply describe your project, and get:
 - 🎯 Tailored video recommendations with **95%+ match accuracy**
 - 💰 Complete **budget & ROI projections**
 - 📋 Production-ready **creative briefs**
-- 🎨 **Portfolio examples** from 3,000+ successful campaigns
+- 🎨 **Portfolio examples** from 50+ successful campaigns
 - 📊 **Full-funnel strategies** for comprehensive marketing
 
 ---
@@ -33,7 +33,7 @@ Simply describe your project, and get:
 ### 🤖 **AI-Powered Intelligence**
 
 - **Google Gemini 2.5 Flash** integration for blazing-fast recommendations
-- **Deep learning** from 3,000+ B2W video campaigns
+- **Deep learning** from 50+ B2W video campaigns
 - **Industry-specific** insights across 8+ sectors (SaaS, Fintech, Healthcare, etc.)
 
 ### 📊 **Comprehensive Strategy**
@@ -153,7 +153,7 @@ That's it! No build process required. 🎉
 2. **Generate Strategy**
 
    - Click "Generate B2W Strategy"
-   - AI analyzes your inputs against 3,000+ campaigns
+   - AI analyzes your inputs against 50+ campaigns
    - Receives personalized recommendation in 3-5 seconds
 
 3. **Review Results**

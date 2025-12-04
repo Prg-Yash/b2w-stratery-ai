@@ -1,0 +1,13 @@
+name = "gemini-proxy-worker"
+main = "worker.js"
+compatibility_date = "2024-12-05"
+
+# Worker will be available at: https://gemini-proxy-worker.YOUR_SUBDOMAIN.workers.dev
+# Wrangler will automatically detect your account ID
+
+# Environment variables and secrets
+# Set your Gemini API key using: wrangler secret put GEMINI_API_KEY
+# DO NOT put the actual API key in this file
+
+[env.production]
+name = "gemini-proxy-worker"

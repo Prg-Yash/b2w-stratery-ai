@@ -1,6 +1,8 @@
 export const API_CONFIG = {
-  // I would normally not commit API keys to source control.
-  // This is just for demonstration purposes.
-  // I would have setup cloudfare for this, but was too bored to do it. Either way i am going to delete it later.
-  GEMINI_API_KEY: "AIzaSyCU8atkEv2nB5o_KEowsDVX_RwvPgfTNl0",
+  // Cloudflare Worker URL - Update this after deploying your worker
+  // Your worker will be available at: https://gemini-proxy-worker.YOUR_SUBDOMAIN.workers.dev
+  WORKER_URL: "https://gemini-proxy-worker.yashnimse92.workers.dev",
+
+  // The API key is now stored securely in Cloudflare Workers environment
+  // No API keys stored in the frontend code!
 };

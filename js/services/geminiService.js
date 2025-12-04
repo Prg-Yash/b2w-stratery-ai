@@ -8,38 +8,27 @@ import B2W_KNOWLEDGE_BASE from "../config/b2wKnowledgeBase.js";
 
 export class GeminiService {
   constructor() {
-    this.API_KEY = null;
-    this.model = null;
+    this.WORKER_URL = null;
     this.initialized = false;
   }
 
   /**
-   * Initialize Gemini AI with API key
+   * Initialize Gemini AI with Cloudflare Worker URL
    */
-  async init(apiKey) {
+  async init(workerUrl) {
     try {
-      if (!apiKey || apiKey === "YOUR_API_KEY") {
-        console.warn("⚠️ No valid API key provided. Running in demo mode.");
+      if (!workerUrl) {
+        console.warn("⚠️ No Worker URL provided. Running in demo mode.");
         this.initialized = false;
         return false;
       }
 
-      this.API_KEY = apiKey;
+      this.WORKER_URL = workerUrl;
 
-      // Dynamically import Gemini SDK
-      const { GoogleGenerativeAI } = await import("@google/generative-ai");
-      const genAI = new GoogleGenerativeAI(this.API_KEY);
-
-      // Use gemini-2.5-flash model
-      this.model = genAI.getGenerativeModel({
-        model: "gemini-2.5-flash",
-        systemInstruction: this.getSystemInstruction(),
-      });
-
-      // Set initialized to true - will test on first actual use
+      // Set initialized to true
       this.initialized = true;
       console.log(
-        "✅ Gemini AI initialized successfully with model: gemini-2.5-flash"
+        "✅ Gemini AI initialized successfully via Cloudflare Worker"
       );
       console.log("✅ Model ready for strategy generation");
       return true;
@@ -189,25 +178,33 @@ TONE: Professional, insightful, confident, results-oriented. Speak as a trusted 
     const prompt = this.buildPrompt(input, isFunnelMode);
 
     try {
-      console.log("🤖 Sending request to Gemini AI...");
+      console.log("🤖 Sending request to Gemini AI via Worker...");
       console.log("📤 Prompt length:", prompt.length, "characters");
 
-      const result = await this.model.generateContent({
-        contents: [{ role: "user", parts: [{ text: prompt }] }],
-        generationConfig: {
-          temperature: 0.9,
-          topP: 0.95,
-          maxOutputTokens: 8192,
-          responseMimeType: "application/json",
+      // Call Cloudflare Worker instead of Gemini SDK
+      const response = await fetch(this.WORKER_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+          contents: [{ role: "user", parts: [{ text: prompt }] }],
+          systemInstruction: this.getSystemInstruction(),
+        }),
       });
 
-      const response = result.response;
-      const text = response.text();
+      if (!response.ok) {
+        throw new Error(`Worker responded with status: ${response.status}`);
+      }
+
+      const result = await response.json();
+
+      // Extract text from Gemini response format
+      const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
 
       console.log("📥 Received response from Gemini");
-      console.log("✅ Response length:", text.length, "characters");
-      console.log("Response preview:", text.substring(0, 300));
+      console.log("✅ Response length:", text?.length || 0, "characters");
+      console.log("Response preview:", text?.substring(0, 300) || "No text");
 
       if (text) {
         // Clean up JSON response

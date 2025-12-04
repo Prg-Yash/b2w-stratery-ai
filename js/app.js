@@ -95,15 +95,11 @@ async function init() {
     // Cache DOM elements
     cacheElements();
 
-    // Initialize Gemini
-    const apiKey = API_CONFIG.GEMINI_API_KEY;
-    console.log(
-      "🔑 API Key loaded:",
-      apiKey ? `${apiKey.substring(0, 20)}...` : "MISSING"
-    );
-    console.log("🔑 API Key length:", apiKey?.length);
+    // Initialize Gemini with Worker URL
+    const workerUrl = API_CONFIG.WORKER_URL;
+    console.log("🔑 Worker URL loaded:", workerUrl || "MISSING");
 
-    const geminiInitialized = await geminiService.init(apiKey);
+    const geminiInitialized = await geminiService.init(workerUrl);
 
     if (!geminiInitialized) {
       console.warn(
